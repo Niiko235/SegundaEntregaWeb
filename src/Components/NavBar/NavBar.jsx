@@ -1,7 +1,7 @@
-import React, { use, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import './NavBar.css'
-import { useState } from "react";
 
+import { ThemeContext } from '../../Context/themeContext'
 
 import iconoTemaClaro from '../../img/iconoTemaClaro.png'
 import iconoTemaOscuro from '../../img/iconoTemaOscuro.png'
@@ -9,10 +9,8 @@ import iconoTemaOscuro from '../../img/iconoTemaOscuro.png'
 
 const NavBar = () => {
 
-    const [theme, setTheme] = useState(true);
-
-    
     const [icono, setIcono] = useState(iconoTemaClaro);
+    const {theme, setTheme} = useContext(ThemeContext);
 
     const cambiarTema = () =>{
         setTheme(!theme);
@@ -27,12 +25,9 @@ const NavBar = () => {
     <>
         <nav id = {theme ? 'claro' : 'oscuro' }>
 
-
             <div id="icon" onClick={cambiarTema}>
                 <img src= {icono} alt="" />
             </div>
-
-
 
             <ul>
                 <li>Home</li>

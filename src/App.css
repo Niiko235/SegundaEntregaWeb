@@ -14,3 +14,11 @@ main{
 
     width: 100vw;
 }
+
+#mainClaro{
+    background-color: white;
+}
+
+#mainOscuro{
+    background-color: black;
+}

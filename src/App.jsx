@@ -1,50 +1,42 @@
-import {useEffect, useState} from 'react';
+import {useState, useEffect} from 'react'
 import './App.css'
-
-import Header from './Components/Header/Header'
-import CardMui from './Components/CardMui/CardMui';
-
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-
-import HomePage from './Pages/HomePage/HomePage'
-
-import Pagination from '@mui/material/Pagination'
-import NavBar from './Components/NavBar/NavBar';
-
-
+import CardGoku from './components/CardGoku/CardGoku'
 
 const App = () => {
 
-  const [characters, setCharacters] = useState([]);
-  const [pgs, setPgs] = useState(0);
-
-
+  const [personajes, setPersonajes] = useState([]);
+  const [items, setItems] = useState(1);
+  
   useEffect(()=>{
     fetch('https://dragonball-api.com/api/characters')
     .then(response => response.json())
     .then(data => {
-      setCharacters(data.items)
-      setPgs(data.meta.totalPages)
+      setItems(data.meta.totalItems)
     })
-    .catch(()=>(console.log("no hay net")));    
-  }, []);
 
-  const handlePagination = (event, page) => {
-    fetch(`https://dragonball-api.com/api/characters?page=${page}&limit=10`)
+  },[]);
+
+  useEffect(()=>{
+    fetch(`https://dragonball-api.com/api/characters?limit=${items}`)
     .then(response => response.json())
-    .then(data => setCharacters(data.items))
-    .catch(()=>(console.log("no hay net")));   
-  }
-  
-
-  
-
+    .then(data => setPersonajes(data.items))
+  },[items]);
+   
   return (
-    <>
-      <NavBar/>
-      <Header id='Header'/>
 
+    <>
+      <main>
+
+        {
+          personajes.map((personajes)=>(
+            <CardGoku   key={personajes.id} personaje={personajes} />
+          ))
+        }
+        
+      </main>
+      
     </>
+    
   )
 }
 

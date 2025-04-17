@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import './App.css'
 import CardGoku from './components/CardGoku/CardGoku'
+import NavBar from './Components/NavBar/NavBar'
 
 const App = () => {
 
@@ -23,18 +24,14 @@ const App = () => {
   },[items]);
    
   return (
-
     <>
+      <NavBar/>
       <main>
-
-        {
-          personajes.map((personajes)=>(
-            <CardGoku   key={personajes.id} personaje={personajes} />
-          ))
-        }
-        
+        {personajes.map((personajes)=>(
+          <CardGoku   key={personajes.id} personaje={personajes} />
+        ))}
       </main>
-      
+
     </>
     
   )

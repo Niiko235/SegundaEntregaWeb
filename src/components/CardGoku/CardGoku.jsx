@@ -1,15 +1,29 @@
-import React from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import './CardGoku.css'
+
+import { ThemeContext } from '../../Context/themeContext'
+
+import fondoRojo from '../../img/FondoRojo.png'
+import fondoBlanco from '../../img/FondoBlanco.png'
 
 
 const CardGoku = ({ personaje }) => {
+
+    const {theme, setTheme} = useContext(ThemeContext);
+
+    const [imagenFondo, setImagenFondo] = useState(fondoRojo);
+
+    useEffect(() => {
+        setImagenFondo(theme ? fondoRojo : fondoBlanco)
+    }, [theme]);
+
     return (
 
         <>
-            <div  className='contenedor'>
+            <div  className='contenedor' id = {theme ? 'cardGokuClaro' : 'cardGokuOscuro'}>
                 <div className='fondo'>
                     <div className='oscuro'>
-                        <img id='rojo' src="https://img.freepik.com/vector-gratis/red-medias-tintas-patron-fondo-vector-diseno-circulos-diferentes-tamanos_1164-1186.jpg" alt="..." />
+                        <img id='rojo' src={imagenFondo} alt="..." />
                     </div>
                     <div className='imagen'>
                         <img id='goku' src={personaje.image} alt="..." />

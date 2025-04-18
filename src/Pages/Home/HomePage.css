@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+
+main{
+    gap: 30px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+}
+
+#mainClaro{
+    color: black;
+    background-color: white;
+}
+
+#mainOscuro{
+    color: white;
+    background-color: black;
+}

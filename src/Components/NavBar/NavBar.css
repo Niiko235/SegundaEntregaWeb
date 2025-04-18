@@ -9,7 +9,6 @@ nav{
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    /* background-color: red; */
     padding-left: 20px;
     padding-right: 20px;
 
@@ -23,15 +22,30 @@ nav{
         display: flex;
         list-style: none;
         gap: 20px;
+        .itemNav{
+            text-decoration: none;
+        }
     }
 }
 
 #oscuro{
-    color: black;
     background-color: white;
+    .itemNav{
+        color: black;
+    }
+    .itemNav:hover{
+        color: orange;
+    }
 }
 
 #claro{
-    color: white;
     background-color: black;
+    .itemNav{
+        color: white;
+    }
+    .itemNav:hover{
+        color: orange;
+    }
 }
+
+

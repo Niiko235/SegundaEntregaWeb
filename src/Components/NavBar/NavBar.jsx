@@ -1,7 +1,9 @@
-import React, { use, useEffect } from 'react'
-import './NavBar.css'
-import { useState } from "react";
+import React, { useState, useEffect, useContext } from 'react'
+import {Link} from 'react-router-dom'
 
+import './NavBar.css'
+
+import { ThemeContext } from '../../Context/themeContext'
 
 import iconoTemaClaro from '../../img/iconoTemaClaro.png'
 import iconoTemaOscuro from '../../img/iconoTemaOscuro.png'
@@ -9,10 +11,8 @@ import iconoTemaOscuro from '../../img/iconoTemaOscuro.png'
 
 const NavBar = () => {
 
-    const [theme, setTheme] = useState(true);
-
-    
     const [icono, setIcono] = useState(iconoTemaClaro);
+    const {theme, setTheme} = useContext(ThemeContext);
 
     const cambiarTema = () =>{
         setTheme(!theme);
@@ -27,18 +27,15 @@ const NavBar = () => {
     <>
         <nav id = {theme ? 'claro' : 'oscuro' }>
 
-
             <div id="icon" onClick={cambiarTema}>
                 <img src= {icono} alt="" />
             </div>
 
-
-
             <ul>
-                <li>Home</li>
-                <li>Masculino</li>
-                <li>Femenino</li>
-                <li>Acerca de</li>
+                <Link to={"/"} className='itemNav'> Home </Link>
+                <Link to = {"/filter/Male"} className='itemNav'> Male </Link>
+                <Link to = {"/filter/Female"} className='itemNav'> Female </Link>
+                <Link to = {"/aboutUs"} className='itemNav'> About us </Link>
             </ul>
 
 

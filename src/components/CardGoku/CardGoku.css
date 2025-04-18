@@ -12,11 +12,8 @@
     display: flex;
     flex-direction: column;
     font-family: "Roboto", sans-serif;
-    /* background-color: #210720; */
     border-radius: 20px;
-    overflow: hidden; /* 🔥 IMPORTANTE para que no se desborde */
-     /* 🔥 Para contener los absolute de dentro */
-
+    overflow: hidden; 
     .fondo{
         width: 100%;
         height: 70%;

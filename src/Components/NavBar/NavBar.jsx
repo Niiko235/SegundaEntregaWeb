@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
+import {Link} from 'react-router-dom'
+
 import './NavBar.css'
 
 import { ThemeContext } from '../../Context/themeContext'
@@ -30,10 +32,10 @@ const NavBar = () => {
             </div>
 
             <ul>
-                <li>Home</li>
-                <li>Masculino</li>
-                <li>Femenino</li>
-                <li>Acerca de</li>
+                <Link to={"/"} className='itemNav'> Home </Link>
+                <Link to = {"/filter/Male"} className='itemNav'> Male </Link>
+                <Link to = {"/filter/Female"} className='itemNav'> Female </Link>
+                <Link to = {"/aboutUs"} className='itemNav'> About us </Link>
             </ul>
 
 

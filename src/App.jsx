@@ -1,42 +1,41 @@
-import {useState, useEffect, useContext} from 'react'
+import {useContext} from 'react'
 import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import { ThemeContext} from './Context/themeContext'
+import { ThemeContextProvider} from './Context/themeContext'
 
-import CardGoku from './Components/CardGoku/CardGoku'
+
+
 import NavBar from './Components/NavBar/NavBar'
+import HomePage from './Pages/Home/HomePage'
+import FilterPage from './Pages/FilterPage/FilterPage'
+import AboutUsPage from './Pages/AboutUsPage/AboutUsPage'
+import DetailsPage from './Pages/DetailsPage/DetailsPage'
+import ErrorPage from './Pages/ErrorPage/ErrorPage'
+
+
+
 
 
 const App = () => {
 
-  const [personajes, setPersonajes] = useState([]);
-  const [items, setItems] = useState(1);
-
-  const {theme, setTheme} = useContext(ThemeContext);
   
-  useEffect(()=>{
-    fetch('https://dragonball-api.com/api/characters')
-    .then(response => response.json())
-    .then(data => {
-      setItems(data.meta.totalItems)
-    })
-
-  },[]);
-
-  useEffect(()=>{
-    fetch(`https://dragonball-api.com/api/characters?limit=${items}`)
-    .then(response => response.json())
-    .then(data => setPersonajes(data.items))
-  },[items]);
    
   return (
     <>
+      <BrowserRouter>
+        <ThemeContextProvider>
         <NavBar/>
-        <main id = {theme ? 'mainClaro' : 'mainOscuro'}>
-          {personajes.map((personajes)=>(
-            <CardGoku   key={personajes.id} personaje={personajes} />
-          ))}
-        </main>
+         <Routes>
+          <Route path='/' element={<HomePage/>}/>
+            <Route path='/filter/:gender' element={<FilterPage/>}/>
+            <Route path='/aboutUs' element={<AboutUsPage/>}/>
+            <Route path='/details/:id' element={<DetailsPage/>}/>
+            <Route path='*' element={<ErrorPage/>}/>
+         </Routes>
+        </ThemeContextProvider>
+      </BrowserRouter>
+        
     </>
     
   )

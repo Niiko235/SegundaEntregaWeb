@@ -2,7 +2,9 @@ import React, {useState, useEffect, useContext} from 'react'
 import { useParams } from 'react-router-dom'
 import { ThemeContext } from '../../Context/themeContext'
 
-import CardGoku from '../../Components/CardGoku/CardGoku'
+
+import SuperCard from '../../Components/SuperCard/SuperCard'
+import CardTransformaciones from '../../Components/CardTransformaciones/CardTransformaciones'
 
 import './DetailsPage.css'
 
@@ -26,11 +28,16 @@ const DetailsPage = () => {
 
   return (
     <>
-      <div>{personaje.description}</div>
       <main id = {theme ? 'mainClaro' : 'mainOscuro'}>
-        {transformaciones.map((i) => {
-         return <img src={i.image} alt="" />
-        })}
+
+        <SuperCard key={personaje.id} personaje={personaje}/>
+        <div id="contenedorTransformaciones">
+          {transformaciones.length === 0 ? (
+            <p>No hay transformaciones </p>
+          ):(transformaciones.map((i) => (
+             <CardTransformaciones key={i.id} transformacion = {i}/>
+          )))}
+        </div>
       </main>
     </>
   )

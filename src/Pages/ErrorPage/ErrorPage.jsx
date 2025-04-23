@@ -3,7 +3,11 @@ import './ErrorPage.css'
 
 const ErrorPage = () => {
   return (
-    <div>ErrorPage</div>
+    <>
+       <main>
+          <div>ErrorPage</div>
+       </main>
+    </>
   )
 }
 

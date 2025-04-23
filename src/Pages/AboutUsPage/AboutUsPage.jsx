@@ -3,7 +3,11 @@ import './AboutUsPage.css'
 
 const AboutUsPage = () => {
   return (
-    <div>AboutUsPage</div>
+    <>
+      <main>
+        <div>AboutUsPage</div>  
+      </main>
+    </>
   )
 }
 

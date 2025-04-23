@@ -26,8 +26,8 @@ const App = () => {
       <BrowserRouter>
         <ThemeContextProvider>
         <NavBar/>
-         <Routes>
-          <Route path='/' element={<HomePage/>}/>
+         <Routes> 
+            <Route path='/' element={<HomePage/>}/>
             <Route path='/filter/:gender' element={<FilterPage/>}/>
             <Route path='/aboutUs' element={<AboutUsPage/>}/>
             <Route path='/details/:id' element={<DetailsPage/>}/>

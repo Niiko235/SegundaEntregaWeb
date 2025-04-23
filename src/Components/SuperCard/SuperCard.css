@@ -1,0 +1,167 @@
+#superCard{
+    width: 80vw;
+    height: 60vh;
+    font-family: "Roboto", sans-serif;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "imagen carta carta";
+    /* *{
+        border: 2px dashed blue;
+    }
+     */
+
+    #imagenPrincipal{
+        grid-area: imagen;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    #card{
+        grid-area: carta;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        section{
+            width: 100%;
+            height: 100%;
+            background-color: grey;
+            position: absolute;
+            backface-visibility: hidden;
+            transition: 1s;
+            border-radius: 5%;
+        }
+        
+        #informacion{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            transform: perspective(500px) rotateY(0deg);
+
+            h1{
+                font-size: 2.5rem;
+            }
+            p{
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+        }
+        #descripcion{
+            display: flex;
+            transform: perspective(500px) rotateY(180deg);
+            article{
+                margin: 20px;
+
+                h1{
+                    font-size: 2.5rem;
+                }
+
+                p{
+                    margin-top: 20px;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+
+        .cartaClara{
+            background-color: black;
+            color: white;
+        }
+        .cartaOscura{
+            background-color: white;
+            color: black;
+        }
+    }
+    #card:hover{
+        #informacion{
+            transform: perspective(500px) rotateY(180deg);
+        }
+        #descripcion{
+            transform: perspective(500px) rotateY(360deg);
+        }
+    }
+}
+
+
+
+@media (min-width: 651px) and (max-width: 1073px) {
+    #superCard{
+        height: 600px;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: "imagen imagen carta carta carta";
+
+        #card{
+            #informacion{
+                flex-direction: column;
+                align-items: start;
+                justify-content: flex-start;
+                padding: 30px;
+
+                article{
+                    h1{
+                        font-size: 2rem;
+                    }
+                    p{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        } 
+    }
+}
+
+
+@media (max-width: 650px) {
+    #superCard{
+        height: 1200px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-areas: 
+        "imagen"
+        "imagen"
+        "imagen"
+        "carta"
+        "carta"
+        "carta"
+        "carta"
+        ;
+
+
+        #card{
+            #informacion{
+                flex-direction: column;
+                align-items: start;
+                justify-content: flex-start;
+                padding: 30px;
+
+                article{
+                    h1{
+                        font-size: 2rem;
+                    }
+                    p{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        } 
+    }
+}
+
+
+

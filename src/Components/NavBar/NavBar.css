@@ -1,51 +1,159 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-
 nav{
 
-    font-size: 2rem;
-    font-family: "Roboto", sans-serif;
-
+    height: 80px;
+    padding: 0px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
-    padding-left: 20px;
-    padding-right: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
 
-    #icon{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    #divIcon{
         height: 80%;
         img{
+            cursor: pointer;
            height: 100%; 
         }
     }
+    
     ul{
         display: flex;
-        list-style: none;
+        align-items: center;
+        justify-content: center;
         gap: 20px;
-        .itemNav{
-            text-decoration: none;
+
+        li{
+            list-style: none;
+            position: relative;
+
+            .navItem{
+                font-size: 1.5rem;
+                font-family: "Roboto", sans-serif;
+                font-weight: 600;
+                text-decoration: none;
+                transition: 0.3s ease-in-out;
+            }
         }
+        
     }
-}
+
+    #mobile{
+        display: none;
+    }
+ }
 
 #oscuro{
     background-color: white;
-    .itemNav{
+    .navItem{
         color: black;
     }
-    .itemNav:hover{
-        color: orange;
+
+    .navItem:hover{
+        color: orangered;
+    }
+
+    .navItem:hover::after{
+        content: "";
+        width: 50%;
+        height: 2px;
+        background: orangered;
+        position: absolute;
+        bottom: -4px;
+        left: 0px;
+    }
+
+    #mobile{
+        font-size: 1.5rem;
+        i{
+            color: black;
+        }
     }
 }
 
 #claro{
     background-color: black;
-    .itemNav{
+    .navItem{
         color: white;
     }
-    .itemNav:hover{
-        color: orange;
+    .navItem:hover{
+        color: orangered;
+    }
+    .navItem:hover::after{
+        content: "";
+        width: 50%;
+        height: 2px;
+        background: orangered;
+        position: absolute;
+        bottom: -4px;
+        left: 0px;
+    }
+
+    #mobile{
+        font-size: 1.5rem;
+        i{
+            color: white ;
+        }
     }
 }
 
+@media screen and (max-width : 650px){
+    nav{
+        ul{
+            padding: 40px;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            position: fixed;
+            top: 80px;
+            right: -60%;
+            width: 60%;
+            height: 100vh;
+            gap: 20px;
+            transition: 0.3s ease-in-out;
+            z-index: 2;
+        }
 
+        .ul.active{
+            right: 0%;
+
+        }
+
+        #mobile{
+            cursor: pointer;
+            display: block;
+            i{
+                font-size: 2rem;
+            }
+        }
+    }
+
+    #oscuro{
+        ul{
+            background-color: white;
+        }
+        #mobile:hover{
+            
+            i{
+                color: orangered;
+            }
+        }
+    }
+
+    #claro{
+        ul{
+            background-color: black;
+        }
+            #mobile:hover{
+            i{
+                color: orangered;
+            }
+        }
+    }
+}

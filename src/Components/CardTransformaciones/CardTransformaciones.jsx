@@ -7,7 +7,7 @@ import fondoRojo from '../../img/FondoRojo.png'
 import fondoBlanco from '../../img/FondoBlanco.png'
 
 
-const CardTransformaciones = ({ transformacion }) => {
+const CardTransformaciones = ({ transformacion }) => { 
 
     const {theme, setTheme} = useContext(ThemeContext);
 

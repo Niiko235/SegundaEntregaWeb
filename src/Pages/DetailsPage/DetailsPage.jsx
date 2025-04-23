@@ -31,13 +31,13 @@ const DetailsPage = () => {
       <main id = {theme ? 'mainClaro' : 'mainOscuro'}>
 
         <SuperCard key={personaje.id} personaje={personaje}/>
-        <div id="contenedorTransformaciones">
+        {/* <div id="contenedorTransformaciones"> */}
           {transformaciones.length === 0 ? (
             <p>No hay transformaciones </p>
           ):(transformaciones.map((i) => (
              <CardTransformaciones key={i.id} transformacion = {i}/>
           )))}
-        </div>
+        {/* </div> */}
       </main>
     </>
   )

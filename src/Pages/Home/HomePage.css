@@ -2,13 +2,26 @@
 
 
 main{
-    margin-top: 80px;
+    /* margin-top: 80px; */
     gap: 30px;
-    padding: 30px;
+    /* padding: 30px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
+
+    header{
+        width: 100vw;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 100%;
+        }
+    }
+
 }
 
 #mainClaro{
@@ -19,4 +32,16 @@ main{
 #mainOscuro{
     color: white;
     background-color: black;
+}
+
+
+
+
+#tarjetas{
+    gap: 30px;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }

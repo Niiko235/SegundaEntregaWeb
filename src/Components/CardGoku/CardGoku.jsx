@@ -20,7 +20,9 @@ const CardGoku = ({ personaje }) => {
     return (
 
         <>
-            <div  className='contenedor' id = {theme ? 'cardGokuClaro' : 'cardGokuOscuro'}>
+        <div className='animate__animated animate__zoomInUp'>
+
+            <div  className='contenedor'   id = {theme ? 'cardGokuClaro' : 'cardGokuOscuro'}>
                 <div className='fondo'>
                     <div className='oscuro'>
                         <img id='rojo' src={imagenFondo} alt="..." />
@@ -39,6 +41,7 @@ const CardGoku = ({ personaje }) => {
                 </div>
 
             </div>
+        </div>
         </>
 
 

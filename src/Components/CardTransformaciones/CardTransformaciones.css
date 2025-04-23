@@ -7,7 +7,7 @@
 }
 
 .contenedor{
-    width: 350px;
+    width: 300px;
     height: 600px;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,7 @@
         
 
         .oscuro{
-            width: 350px;
+            width: 300px;
             height: 440px;
             position: absolute;
             z-index: 0;
@@ -32,14 +32,14 @@
             #rojo{
                 border-top-right-radius: 20px;
                 border-top-left-radius: 20px;
-                max-width: 350px; 
+                max-width: 300px; 
                 height: 420px;
                 
             }
         }
 
         .imagen{
-            width: 350px;
+            width: 300px;
             height: 500px;
             display: flex;
             justify-content: center;

@@ -5,6 +5,7 @@ import { ThemeContext } from '../../Context/themeContext'
 
 import SuperCard from '../../Components/SuperCard/SuperCard'
 import CardTransformaciones from '../../Components/CardTransformaciones/CardTransformaciones'
+import imageTransformations from '../../img/transformaciones.png'
 
 import './DetailsPage.css'
 
@@ -29,14 +30,19 @@ const DetailsPage = () => {
   return (
     <>
       <main id = {theme ? 'mainClaro' : 'mainOscuro'}>
-
+        
         <SuperCard key={personaje.id} personaje={personaje}/>
         {/* <div id="contenedorTransformaciones"> */}
-          {transformaciones.length === 0 ? (
-            <p>No hay transformaciones </p>
-          ):(transformaciones.map((i) => (
-             <CardTransformaciones key={i.id} transformacion = {i}/>
-          )))}
+          {transformaciones.length === 0 ? null :(
+            <>
+              <header>
+              <img src={imageTransformations} alt="..." />
+              </header>
+              {transformaciones.map((i) => (
+              <CardTransformaciones key={i.id} transformacion = {i}/>
+              ))}
+            </>
+          )}
         {/* </div> */}
       </main>
     </>

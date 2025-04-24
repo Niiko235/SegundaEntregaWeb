@@ -3,6 +3,7 @@ import './AboutUsPage.css'
 import nico from '../../img/nico.png'
 import juli from '../../img/juli.png'
 import {ThemeContext} from '../../Context/themeContext'
+import imageAboutUs from '../../img/FotoAboutUs.png'
 
 const AboutUsPage = () => {
 
@@ -11,7 +12,11 @@ const AboutUsPage = () => {
   return (
     <>
     <main id = {theme ? 'mainClaro' : 'mainOscuroB'}>
-      <div id='principal'>
+      {/* <div id='principal'> */}
+        <header>
+          <img src={imageAboutUs} alt="..." />
+        </header>
+        <hr id='linea'/>
         <div id='tituloPrincipal'>
             <h3>Conoce el equipo que se encargo del desarrollo de esta pagina</h3>
         </div>
@@ -56,7 +61,7 @@ const AboutUsPage = () => {
           </div>
         </div> 
 
-      </div>
+      {/* </div> */}
     </main>
     </>
   )

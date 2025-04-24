@@ -1,3 +1,67 @@
-main{
-    margin-top: 80px;
+#errorPage{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* flex-flow: column wrap; */
+    transition: 1s;
+    .gif{
+        scale: 1;
+    }
+
+
+    #btnError{
+        width: 150px;
+        height: 40px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 20px;
+
+        a{
+            text-decoration: none;
+        }
+    }
+
+
+}
+
+
+
+.errorClaro{
+    background-color: white;
+
+    color: orangered;
+
+    #btnError{
+    
+        a{
+            color: orangered;
+        }
+    }
+
+    #btnError:hover{
+        background-color: orangered;
+        cursor: pointer;
+    }
+}
+
+.errorOscuro{
+    background-color: black;
+    color: aqua;
+    #btnError{
+    
+        a{
+            color: aqua;
+        }
+    }
+    
+    
+    #btnError:hover{
+        background-color: orangered;
+        cursor: pointer;
+    }
+    
 }

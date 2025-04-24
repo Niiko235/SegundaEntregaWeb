@@ -2,6 +2,7 @@
     width: 80vw;
     height: 60vh;
     font-family: "Roboto", sans-serif;
+    margin-top: 50px;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -53,7 +54,7 @@
             transform: perspective(500px) rotateY(0deg);
 
             h1{
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             p{
                 font-size: 2rem;
@@ -88,7 +89,16 @@
             color: black;
         }
     }
-    #card:hover{
+    /* #card:active{ 
+        #informacion{
+            transform: perspective(500px) rotateY(180deg);
+        }
+        #descripcion{
+            transform: perspective(500px) rotateY(360deg);
+        }
+    } */
+
+    #card.voltear{
         #informacion{
             transform: perspective(500px) rotateY(180deg);
         }
@@ -96,7 +106,12 @@
             transform: perspective(500px) rotateY(360deg);
         }
     }
+
+
 }
+
+
+
 
 
 

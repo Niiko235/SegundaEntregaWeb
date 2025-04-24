@@ -1,10 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './SuperCard.css'
 import { ThemeContext } from '../../Context/themeContext'
 
 const SuperCard = ({personaje}) => {
 
     const {theme, setTheme} = useContext(ThemeContext);
+    const [flip, setFlip] = useState(false);
+
+    
+    const handleClick = () => {
+        setFlip(!flip)
+    }
+
   return (
     <>
 
@@ -12,7 +19,7 @@ const SuperCard = ({personaje}) => {
              <section id="imagenPrincipal">
                 <img src={personaje.image} alt="" />
             </section>
-            <div id='card'>
+            <div id='card' className={flip ? 'voltear' : null} onClick={handleClick}>
                 <section id='informacion'  className={theme?'cartaClara':'cartaOscura'}>
                     <article>
                         <h1>Nombre</h1>

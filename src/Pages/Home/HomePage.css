@@ -21,7 +21,6 @@ main{
             width: 100%;
         }
     }
-
 }
 
 #mainClaro{
@@ -34,14 +33,17 @@ main{
     background-color: black;
 }
 
+a{
+    text-decoration-line: none;
+}
 
 
 
-#tarjetas{
+/* #tarjetas{
     gap: 30px;
     padding: 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}
+} */

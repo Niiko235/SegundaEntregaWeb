@@ -18,7 +18,6 @@ const CardGoku = ({ personaje }) => {
     }, [theme]);
 
     return (
-
         <>
         <div className='animate__animated animate__zoomInUp'>
 

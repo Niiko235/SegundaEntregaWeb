@@ -76,7 +76,7 @@ const onIntersection = async (entries) => {
         {/* </div> */}
         <div id='scroll'>
           {
-          hasMore &&   <p ref={elementRef} ><Cargar/></p>
+          hasMore &&   <div ref={elementRef}> <Cargar /> </div> 
         }
         </div>
       </main>

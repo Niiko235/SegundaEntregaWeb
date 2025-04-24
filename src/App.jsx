@@ -1,6 +1,9 @@
 import {useContext} from 'react'
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import { BrowserRouter, Routes, Route  } from 'react-router-dom'
+import ScrollToTop  from './Components/ScrollToTop/ScrollToTop'
+
 
 import { ThemeContextProvider} from './Context/themeContext'
 import 'animate.css';
@@ -24,6 +27,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <ThemeContextProvider>
         <NavBar/>
          <Routes> 

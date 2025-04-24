@@ -45,6 +45,7 @@ const SuperCard = ({personaje}) => {
                     </article>
                 </section>
             </div>
+            <br />
         </div>
     </>
   )

@@ -62,6 +62,7 @@ const AboutUsPage = () => {
         </div> 
 
       {/* </div> */}
+      <br />
     </main>
     </>
   )

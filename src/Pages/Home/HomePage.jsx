@@ -45,6 +45,7 @@ const HomePage = () => {
       
     },50)
   })
+  .catch(console.log("Error de carga en los datos de la API en la pagina Home"));
 };
 
  useEffect(()=>{
@@ -67,13 +68,13 @@ const onIntersection = async (entries) => {
         <header>
           <img src={image} alt="..." />
         </header>
-        {/* <div id='tarjetas'> */}
+        <div id='tarjetas'>
           {personajes.map((personajes)=>(
             <Link to={`/details/${personajes.id}`} key={personajes.id}>
               <CardGoku  key={personajes.id} personaje={personajes} />
             </Link>
           ))}
-        {/* </div> */}
+        </div>
         <div id='scroll'>
           {
           hasMore &&   <div ref={elementRef}> <Cargar /> </div> 

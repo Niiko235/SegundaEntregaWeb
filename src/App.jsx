@@ -10,6 +10,7 @@ import 'animate.css';
 
 
 import NavBar from './Components/NavBar/NavBar'
+import Footer from './Components/Footer/Footer'
 import HomePage from './Pages/Home/HomePage'
 import FilterPage from './Pages/FilterPage/FilterPage'
 import AboutUsPage from './Pages/AboutUsPage/AboutUsPage'
@@ -37,8 +38,10 @@ const App = () => {
             <Route path='/details/:id' element={<DetailsPage/>}/>
             <Route path='*' element={<ErrorPage/>}/>
          </Routes>
+         <Footer/>
         </ThemeContextProvider>
       </BrowserRouter>
+      
         
     </>
     

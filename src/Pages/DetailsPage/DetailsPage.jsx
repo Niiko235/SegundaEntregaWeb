@@ -25,6 +25,7 @@ const DetailsPage = () => {
         setPersonaje(data)
         setTransformaciones(data.transformations)
       })
+      .catch(console.log("Error de carga en los datos de la API en la pagina datails"))
   }, []);
 
   return (

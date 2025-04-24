@@ -1,0 +1,41 @@
+footer{
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 7px;
+    #github{
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        text-decoration: none;
+    }
+    hr{
+        width: 200px;
+    }
+}
+
+.footerOscuro{
+    background-color: white;
+    color: black;
+
+    #github{
+        a{
+            text-decoration-line: none;
+            color: black;
+        }
+    }
+}
+
+.footerClaro{
+    background-color: black;
+    color: white;
+    #github{
+        a{
+            text-decoration-line: none;
+            color: white;
+        }
+    }
+}

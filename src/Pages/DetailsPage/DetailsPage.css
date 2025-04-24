@@ -6,9 +6,18 @@ main{
     #contenedorTransformaciones{
         padding: 30px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-flow: row wrap;
-        gap: 20px;
+
+
+        #cartasTransformaciones{
+            margin-top: 50px;
+            display: flex;
+            flex-flow: row wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }

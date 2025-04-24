@@ -33,18 +33,21 @@ const DetailsPage = () => {
       <main id = {theme ? 'mainClaro' : 'mainOscuro'}>
         
         <SuperCard key={personaje.id} personaje={personaje}/>
-        {/* <div id="contenedorTransformaciones"> */}
+        <div id="contenedorTransformaciones">
           {transformaciones.length === 0 ? null :(
             <>
               <header>
               <img src={imageTransformations} alt="..." />
               </header>
-              {transformaciones.map((i) => (
-              <CardTransformaciones key={i.id} transformacion = {i}/>
-              ))}
+              
+              <div id = 'cartasTransformaciones'>
+                {transformaciones.map((i) => (
+                <CardTransformaciones key={i.id} transformacion = {i}/>
+                ))}
+              </div>
             </>
           )}
-        {/* </div> */}
+        </div>
       </main>
     </>
   )
